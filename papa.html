@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Ramkumar Verma 🎂</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI', Arial, sans-serif;
+  background:linear-gradient(135deg,#ffecd2,#fcb69f);
+  overflow-x:hidden;
+}
+
+.container{
+  max-width:800px;
+  margin:40px auto;
+  background:white;
+  border-radius:20px;
+  padding:30px;
+  text-align:center;
+  box-shadow:0 15px 40px rgba(0,0,0,0.2);
+}
+
+h1{
+  color:#e63946;
+  margin-bottom:10px;
+}
+
+h2{
+  color:#333;
+  margin-bottom:20px;
+}
+
+.photo{
+  width:220px;
+  height:220px;
+  margin:20px auto;
+  border-radius:50%;
+  overflow:hidden;
+  border:6px solid #ff6b6b;
+}
+
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.msg{
+  font-size:18px;
+  line-height:1.6;
+  margin-top:20px;
+  color:#444;
+}
+
+.footer{
+  margin-top:30px;
+  font-size:16px;
+  color:#555;
+}
+
+/* 🌸 Falling flowers */
+.flower{
+  position:fixed;
+  top:-50px;
+  font-size:24px;
+  animation:fall linear infinite;
+}
+
+@keyframes fall{
+  0%{transform:translateY(-50px);}
+  100%{transform:translateY(110vh);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 Background Music -->
+<audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+  <h1>🎉 Happy Birthday 🎉</h1>
+  <h2>Ramkumar Verma</h2>
+  <p><b>Age:</b> 50 Years</p>
+
+  <div class="photo">
+    <img src="ramkumar.jpg" alt="Ramkumar Verma">
+  </div>
+
+  <div class="msg">
+    Wishing you a very Happy Birthday 🎂<br><br>
+    On this special milestone of 50 years,
+    may your life be filled with good health,
+    happiness, peace and countless smiles.
+    Your journey inspires everyone around you 🌟
+  </div>
+
+  <div class="footer">
+    🎈 Stay blessed & keep smiling always 🎈
+  </div>
+</div>
+
+<script>
+/* 🌸 Flowers generator */
+for(let i=0;i<25;i++){
+  let flower=document.createElement("div");
+  flower.className="flower";
+  flower.innerHTML="🌸";
+  flower.style.left=Math.random()*100+"vw";
+  flower.style.animationDuration=5+Math.random()*5+"s";
+  document.body.appendChild(flower);
+}
+</script>
+
+</body>
+</html>
