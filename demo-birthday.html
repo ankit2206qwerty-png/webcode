@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday 🎉</title>
+
+  <style>
+    body{
+      margin:0;
+      font-family:'Segoe UI', Arial, sans-serif;
+      background:linear-gradient(135deg,#ffe29f,#ffa99f);
+      text-align:center;
+      color:#333;
+      overflow-x:hidden;
+    }
+
+    /* 🌸 Falling Flowers */
+    .flower{
+      position:fixed;
+      top:-40px;
+      font-size:26px;
+      animation:fall linear infinite;
+      opacity:0.9;
+      z-index:1;
+    }
+
+    @keyframes fall{
+      to{
+        transform:translateY(110vh) rotate(360deg);
+      }
+    }
+
+    .container{
+      max-width:900px;
+      margin:auto;
+      padding:80px 20px;
+      position:relative;
+      z-index:2;
+    }
+
+    h1{
+      font-size:48px;
+      color:#ff6b6b;
+      margin-bottom:10px;
+    }
+
+    .name{
+      font-size:28px;
+      font-weight:bold;
+      margin-bottom:30px;
+    }
+
+    .photo{
+      width:240px;
+      height:240px;
+      border-radius:50%;
+      object-fit:cover;
+      border:7px solid white;
+      box-shadow:0 12px 35px rgba(0,0,0,0.25);
+      margin-bottom:35px;
+    }
+
+    .emoji{
+      font-size:36px;
+      margin:25px 0 35px;
+    }
+
+    .message{
+      background:white;
+      padding:40px;
+      border-radius:22px;
+      font-size:18px;
+      line-height:1.8;
+      box-shadow:0 12px 35px rgba(0,0,0,0.18);
+    }
+
+    footer{
+      margin-top:60px;
+      font-size:14px;
+      color:#555;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🌸 FLOWERS -->
+  <div class="flower" style="left:5%; animation-duration:9s;">🌸</div>
+  <div class="flower" style="left:15%; animation-duration:11s;">🌼</div>
+  <div class="flower" style="left:25%; animation-duration:8s;">🌺</div>
+  <div class="flower" style="left:35%; animation-duration:12s;">🌸</div>
+  <div class="flower" style="left:45%; animation-duration:10s;">🌼</div>
+  <div class="flower" style="left:55%; animation-duration:13s;">🌺</div>
+  <div class="flower" style="left:65%; animation-duration:9s;">🌸</div>
+  <div class="flower" style="left:75%; animation-duration:11s;">🌼</div>
+  <div class="flower" style="left:85%; animation-duration:8s;">🌺</div>
+
+  <div class="container">
+
+    <!-- TITLE -->
+    <h1>Happy Birthday 🎉</h1>
+
+    <!-- ✅ NEUTRAL DEMO NAME -->
+    <div class="name">Your Name Here</div>
+
+    <!-- ✅ NEUTRAL BIRTHDAY PHOTO -->
+    <img class="photo"
+      src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=500&q=80"
+      alt="Birthday Demo Photo">
+
+    <div class="emoji">🎂 🎉 🎁</div>
+
+    <!-- MESSAGE -->
+    <div class="message">
+      Wishing you a day filled with happiness, love and laughter.
+      May this year bring you success, good health and countless smiles 😊  
+      <br><br>
+      Have a wonderful birthday and enjoy your special day ✨
+    </div>
+
+    <footer>
+      Made specially for you ❤️
+    </footer>
+
+  </div>
+
+</body>
+</html>
