@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HTML Code Store</title>
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<style>
+/* BODY */
+body{
+  margin:0;
+  font-family:system-ui, Arial, sans-serif;
+  background:#eaeaea;
+  display:flex;
+  justify-content:center;
+}
+
+/* PHONE RATIO APP */
+.app{
+  width:100%;
+  max-width:420px;
+  min-height:100vh;
+  background:#f4f4f4;
+  position:relative;
+  box-shadow:0 0 30px rgba(0,0,0,0.15);
+  overflow-y:auto;        /* ✅ SCROLL FIX */
+  overflow-x:hidden;
+}
+
+/* WELCOME SCREEN */
+#welcome{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,#ff4d6d,#ff758f);
+  z-index:50;
+  overflow:hidden;
+  display:none;           /* ✅ hidden by default */
+  animation: fadeOut 1s ease forwards;
+  animation-delay:4s;
+}
+
+/* welcome text */
+.welcome-text{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  text-align:center;
+  color:#fff;
+  font-weight:700;
+  z-index:5;
+}
+.welcome-text .small{
+  font-size:18px;
+  opacity:0.9;
+}
+.welcome-text .big{
+  font-size:26px;
+  margin-top:6px;
+}
+
+/* welcome flowers */
+.welcome-flower{
+  position:absolute;
+  font-size:24px;
+  opacity:0.9;
+  z-index:1;
+}
+.down{top:-30px;animation:fallDown linear infinite;}
+.up{bottom:-30px;animation:fallUp linear infinite;}
+
+@keyframes fallDown{
+  to{transform:translateY(120vh) rotate(360deg);}
+}
+@keyframes fallUp{
+  to{transform:translateY(-120vh) rotate(-360deg);}
+}
+@keyframes fadeOut{
+  to{opacity:0;visibility:hidden;}
+}
+
+/* SITE FLOWERS */
+.flower{
+  position:absolute;
+  top:-30px;
+  font-size:22px;
+  animation:fallDown linear infinite;
+  opacity:0.8;
+  z-index:1;
+}
+
+/* CONTENT */
+.content{
+  position:relative;
+  z-index:5;
+}
+
+/* BANNER */
+.banner{
+  background:#000;
+  color:#fff;
+  text-align:center;
+  padding:9px;
+  font-size:13px;
+  font-weight:600;
+}
+.banner span{color:#ffd166;}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#ff4d6d,#ff758f);
+  color:#fff;
+  padding:40px 16px;
+  text-align:center;
+}
+.hero h1{
+  margin:0 0 10px;
+  font-size:28px;
+}
+.hero p{
+  margin:0;
+  font-size:15px;
+  line-height:1.6;
+}
+
+/* BUTTON GRID */
+.btn-group{
+  margin-top:24px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.btn{
+  padding:14px 8px;
+  background:#fff;
+  color:#ff4d6d;
+  text-decoration:none;
+  font-weight:600;
+  border-radius:12px;
+  box-shadow:0 5px 14px rgba(0,0,0,0.2);
+  font-size:14px;
+}
+.combo{
+  background:#fff3cd;
+  color:#b45309;
+  border:1.5px solid #ffd166;
+}
+
+/* SECTION */
+.section{
+  padding:32px 16px;
+}
+.section h2{
+  font-size:22px;
+  margin-bottom:18px;
+}
+
+/* CARD */
+.card{
+  background:#fff;
+  padding:18px;
+  border-radius:14px;
+  margin-bottom:14px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+.card h3{
+  margin:0 0 6px;
+  font-size:16px;
+}
+.card p{
+  margin:0;
+  font-size:14px;
+  line-height:1.5;
+}
+
+/* FOOTER */
+footer{
+  background:#222;
+  color:#aaa;
+  text-align:center;
+  font-size:12px;
+  padding:16px;
+}
+
+/* WHATSAPP */
+.whatsapp-sticky{
+  position:fixed;
+  bottom:14px;
+  right:14px;
+  background:#25D366;
+  color:#fff;
+  padding:7px 11px;
+  border-radius:40px;
+  font-size:12.5px;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow:0 4px 10px rgba(0,0,0,0.25);
+  z-index:999;
+}
+@media(min-width:500px){
+  .whatsapp-sticky{
+    right:calc(50% - 210px);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- WELCOME -->
+  <div id="welcome">
+    <div class="welcome-text">
+      <div class="small">welcome to</div>
+      <div class="big">HTML code store</div>
+    </div>
+  </div>
+
+  <!-- WELCOME FLOWERS -->
+  <script>
+    const welcome = document.getElementById("welcome");
+
+    for(let i=0;i<30;i++){
+      let f=document.createElement("div");
+      f.className="welcome-flower down";
+      f.innerHTML="🌸";
+      f.style.left=Math.random()*100+"%";
+      f.style.animationDuration=(6+Math.random()*6)+"s";
+      welcome.appendChild(f);
+    }
+
+    for(let i=0;i<30;i++){
+      let f=document.createElement("div");
+      f.className="welcome-flower up";
+      f.innerHTML="🌸";
+      f.style.left=Math.random()*100+"%";
+      f.style.animationDuration=(6+Math.random()*6)+"s";
+      welcome.appendChild(f);
+    }
+  </script>
+
+  <!-- SITE FLOWERS -->
+  <script>
+    const app=document.querySelector('.app');
+    for(let i=0;i<25;i++){
+      let f=document.createElement("div");
+      f.className="flower";
+      f.innerHTML="🌸";
+      f.style.left=Math.random()*100+"%";
+      f.style.animationDuration=(10+Math.random()*8)+"s";
+      f.style.animationDelay=Math.random()*5+"s";
+      app.appendChild(f);
+    }
+  </script>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <div class="banner">
+      ⏰ Limited Time Offer:
+      <span>Love Combo @ ₹499</span>
+    </div>
+
+    <div class="hero">
+      <h1>HTML Code Store</h1>
+      <p>Ready-made HTML pages for couples, birthdays & anniversaries ❤️</p>
+
+      <div class="btn-group">
+        <a class="btn" href="couple.html">Couple Love</a>
+        <a class="btn" href="birthday.html">Birthday</a>
+        <a class="btn" href="anniversary.html">Anniversary</a>
+        <a class="btn combo" href="combo.html">🔥 Combo ₹499</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Why Choose Us</h2>
+
+      <div class="card">
+        <h3>Super Easy Customization</h3>
+        <p>Sirf naam, photo aur message change karo — coding ki bilkul zarurat nahi.</p>
+      </div>
+
+      <div class="card">
+        <h3>Instant WhatsApp Delivery</h3>
+        <p>Payment ke turant baad files WhatsApp par mil jaati hain.</p>
+      </div>
+
+      <div class="card">
+        <h3>Mobile & PC Friendly</h3>
+        <p>Phone aur PC dono pe same premium experience.</p>
+      </div>
+
+      <div class="card">
+        <h3>Perfect Emotional Gift</h3>
+        <p>Personal, memorable aur dil se connected surprise.</p>
+      </div>
+    </div>
+
+    <footer>© 2025 HTML Code Store</footer>
+
+  </div>
+</div>
+
+<!-- FIRST VISIT LOGIC -->
+<script>
+  const welcomeScreen = document.getElementById("welcome");
+  if (!localStorage.getItem("htmlCodeStoreVisited")) {
+    welcomeScreen.style.display = "block";
+    localStorage.setItem("htmlCodeStoreVisited", "true");
+  }
+</script>
+
+<a class="whatsapp-sticky"
+href="https://wa.me/917015006516?text=Hi%20I%20visited%20your%20website%20and%20I%20want%20to%20know%20more%20about%20your%20pages%20😊"
+target="_blank">💬 WhatsApp</a>
+
+</body>
+</html>
